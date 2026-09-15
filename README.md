@@ -4,6 +4,10 @@ Watch an AI write code, hear it explain, and interrupt with questions. The code 
 
 An experiment in working together through voice and visible changes. Coding is the first surface.
 
+[![Work Aloud after a live coding conversation](docs/demo.png)](https://github.com/itsHabib/work-aloud/raw/refs/heads/main/docs/demo.webm)
+
+**[Watch the one-minute demo with sound](https://github.com/itsHabib/work-aloud/raw/refs/heads/main/docs/demo.webm).** Real generation and Cedar speech, including a question and continuation. [Recording details](docs/demo.md).
+
 ## Try it
 
 You need **Node 22.9+**, the [Codex CLI](https://developers.openai.com/codex/cli) signed in with ChatGPT, and a direct [OpenAI API key](https://platform.openai.com/api-keys) for speech.
