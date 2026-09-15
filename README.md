@@ -4,6 +4,8 @@ Watch an AI write code, hear it explain, and interrupt with questions. The code 
 
 An experiment in working together through voice and visible changes. Coding is the first surface.
 
+The idea is to make a work-in-progress easier to follow: watch it take shape, ask about the bit in front of you, then carry on together. Try it, fork it, or borrow the interaction for another kind of work.
+
 [![Work Aloud after a live coding conversation](docs/demo.png)](https://github.com/itsHabib/work-aloud/raw/refs/heads/main/docs/demo.webm)
 
 **[Watch the one-minute demo with sound](https://github.com/itsHabib/work-aloud/raw/refs/heads/main/docs/demo.webm).** Real generation and Cedar speech, including a question and continuation. [Recording details](docs/demo.md).
@@ -35,7 +37,13 @@ Code generation uses your Codex account. [Cedar speech](https://developers.opena
 
 Codex generates small code/explanation pairs. Each explanation becomes a Cedar audio clip, and the corresponding edit is typed according to that clip’s playback time. A question interrupts generation and includes the exact visible code as context. [Implementation and limits](docs/design.md).
 
-This is a local prototype. Questions are typed or dictated; continuous microphone conversation is a possible next step. Generated code is displayed, never executed or tested by this app. Keep the server on loopback; it has no hosted account or billing system.
+This is a local prototype. Questions are typed or dictated, and generated code is displayed for you to inspect. The app does not execute or test that code. Keep the server on loopback.
+
+## What we've tried—and where it could go
+
+The recorded experiment builds a JavaScript `unique(items)` function with real Codex generation and Cedar speech. We interrupt partway through a line to ask whether `Set` compares objects by value or identity, then continue from the exact visible code. The 58-second recording includes the question, answer and continuation. [Demo and recording notes](docs/demo.md).
+
+That working interaction suggests other experiments: narrating a diagram as it is drawn, explaining a calculation as it develops, or talking through a document edit. Those are ideas to build on; the current app implements the coding surface. Continuous microphone conversation is another possible next step.
 
 ## Development
 
