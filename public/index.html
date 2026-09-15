@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Work Aloud</title><link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="narrator.css"><script type="module" src="narrator-client.mjs"></script>
+</head>
+<body>
+  <header><a href="/">Work Aloud<span> / watch it work, hear it explain</span></a><span id="connection">Codex + Cedar</span></header>
+  <main>
+    <section class="brief">
+      <div><p class="eyebrow">WATCH IT TAKE SHAPE</p><h1>What should we build?</h1><p>Give me a task. I’ll write it here and explain as I go.</p></div>
+      <form id="task-form">
+        <label class="sr-only" for="task">What should we build?</label>
+        <textarea id="task" rows="2" maxlength="2000">Build a small LRU cache in JavaScript using Map. Include get and put, and show what happens when the cache fills up.</textarea>
+        <div class="start-row"><div class="suggestions"><button type="button" data-task="Build a small debounce function in JavaScript. Show how repeated calls reset the timer.">Debounce</button><button type="button" data-task="Write a Python function that finds a path through a small maze using breadth-first search.">Find a path</button><button type="button" data-task="Build a JavaScript function that merges overlapping date intervals, then add an example.">Merge intervals</button></div><button id="start" class="primary" type="submit">Build it & talk</button></div>
+        <details><summary>Start from existing code</summary><label for="initial">Paste a small file, then describe what you want explained or changed.</label><textarea id="initial" rows="5" maxlength="24000" spellcheck="false" placeholder="Your code…"></textarea></details>
+      </form>
+    </section>
+    <div class="workspace">
+      <section class="editor" aria-label="Live code editor">
+        <div class="filebar"><span><span class="dot" id="activity"></span><strong id="file-label">Your code appears here</strong></span><button id="copy" disabled>Copy code</button></div>
+        <div id="code-scroll"><pre id="code" tabindex="0" aria-label="Generated code"><span class="placeholder">Start a task above. Watch the implementation grow while you listen.</span></pre></div>
+        <div class="editor-footer"><span id="edit-count">Ready when you are</span><span>Generated for your request</span></div>
+      </section>
+      <aside class="conversation" aria-label="Spoken explanation and questions">
+        <div class="speaker"><span class="sound" aria-hidden="true">◖</span><div><strong id="voice-title">Thinking together</strong><small>Cedar · OpenAI-generated voice</small></div></div>
+        <p id="caption">The explanation and the code will unfold together. Stop me whenever you want to ask something.</p>
+        <progress id="progress" max="1" value="0" aria-label="Current explanation playback"></progress>
+        <p id="status" role="status">Ready. Uses your Codex account and OpenAI speech API when you start.</p>
+        <div class="controls"><button id="pause" disabled>Pause</button><button id="continue" class="primary" disabled>Continue coding</button><button id="stop" disabled>End</button></div>
+        <form id="question-form"><label for="question">Interrupt with a question</label><textarea id="question" rows="2" maxlength="2000" placeholder="Wait—why did you choose that?" disabled></textarea><button id="ask" disabled>Ask & listen</button></form>
+        <p class="hint">Typing a question pauses the demonstration. You can also use your device’s dictation in this box.</p>
+        <details class="history"><summary>Conversation so far</summary><div id="history"></div></details>
+      </aside>
+    </div>
+    <footer>Fresh code and answers from Codex. Cedar speech is AI-generated through OpenAI. This editor does not execute the generated code.</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,15 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.keys
+*.pem
+*.key
+credentials*
+secrets/
+coverage/
+dist/
+.next/
+test-results/
+*.log
+.DS_Store
