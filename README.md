@@ -56,4 +56,4 @@ npm run test:browser
 
 Tests use explicit model and audio fixtures and make no inference calls. Runtime dependencies are Node and your installed Codex CLI; Playwright is only for development. The initial release was exercised with Codex CLI `0.153.4`. Its app-server interface is experimental, so later CLI changes may require an adapter update.
 
-[MIT](LICENSE) · Built by Michael Habib
+[MIT](LICENSE)
